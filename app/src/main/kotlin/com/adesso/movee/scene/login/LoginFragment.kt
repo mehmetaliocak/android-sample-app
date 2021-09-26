@@ -15,6 +15,18 @@ class LoginFragment : BaseTransparentStatusBarFragment<LoginViewModel, FragmentL
     override fun initialize() {
         super.initialize()
 
+        binder.composeView.setContent {
+            LoginScene(
+                usernameLiveData = viewModel.username,
+                passwordLiveData = viewModel.password,
+                onUsernameChange = { viewModel.username.value = it },
+                onPasswordChange = { viewModel.password.value = it },
+                onForgotPasswordClick = { viewModel.onForgotPasswordClick() },
+                onLoginClick = { viewModel.onLoginClick() },
+                onRegisterClick = { viewModel.onRegisterClick() }
+            )
+        }
+
         viewModel.navigateUri.observeNonNull(viewLifecycleOwner, ::handleNavigateUriEvent)
     }
 
