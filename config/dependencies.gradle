@@ -52,7 +52,9 @@ ext {
             timber          : '4.7.1',
             spotless        : '3.27.1',
             detekt          : '1.12.0',
-            gradleVersions  : '0.33.0'
+            gradleVersions  : '0.33.0',
+            compose         : '1.0.1',
+            appcompat       : '1.3.1'
     ]
 
     dependency = [
@@ -63,6 +65,7 @@ ext {
             ],
 
             androidx = [
+                    "androidx.appcompat:appcompat:$version.appcompat",
                     "androidx.core:core-ktx:$version.androidKtx",
                     "androidx.navigation:navigation-fragment-ktx:$version.navigation",
                     "androidx.navigation:navigation-ui-ktx:$version.navigation",
@@ -74,6 +77,18 @@ ext {
                     "androidx.lifecycle:lifecycle-viewmodel-ktx:$version.lifecycle",
                     "androidx.lifecycle:lifecycle-livedata-ktx:$version.lifecycle",
                     "androidx.lifecycle:lifecycle-common-java8:$version.lifecycle",
+            ],
+
+            compose = [
+                    "androidx.compose.ui:ui:$version.compose",
+                    "androidx.compose.ui:ui-tooling:$version.compose",
+                    "androidx.compose.foundation:foundation:$version.compose",
+                    "androidx.compose.material:material:$version.compose",
+                    "androidx.compose.material:material-icons-core:$version.compose",
+                    "androidx.compose.material:material-icons-extended:$version.compose",
+                    "androidx.activity:activity-compose:$version.appcompat",
+                    "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07",
+                    "androidx.compose.runtime:runtime-livedata:$version.compose",
             ],
 
             dagger = [

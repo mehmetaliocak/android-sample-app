@@ -80,10 +80,16 @@ android {
 
     kotlinOptions {
         jvmTarget = compiler.java
+        useIR = true
     }
 
     buildFeatures {
         dataBinding true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion ext.version.compose
     }
 
     packagingOptions {
@@ -109,6 +115,7 @@ dependencies {
     implementation common
     implementation network
     implementation dagger
+    implementation compose
 
     kapt commonKapt
     debugImplementation commonDebug
