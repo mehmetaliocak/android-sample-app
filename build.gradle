@@ -1,7 +1,8 @@
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
+        jcenter()
     }
 
     dependencies {
@@ -17,11 +18,16 @@ buildscript {
     }
 }
 
+plugins {
+    id 'com.diffplug.spotless' version '5.11.1'
+}
+
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
         maven { url "https://jitpack.io" }
+        jcenter()
     }
 
     afterEvaluate { project ->
